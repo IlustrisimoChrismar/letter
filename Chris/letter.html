@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: grid;
+            place-items: center;
+            background-color: #FFE0E1;
+            color: #ffffff;
+
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .front-card {
+            z-index: 2;
+            background: url('bg.png');
+            background-size: cover;
+        }
+        .message-card{
+            background: url('message-bg.png');
+            background-size: cover;
+        }
+        .front-card, .message-card {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.5s ease-in-out;
+            display: grid;
+            place-items: center;
+
+        }
+
+        .up-card {
+            transform: translateY(-100%);
+            transition: all 1s ease;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            text-align: left;
+            padding: 50px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 50px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 20px auto;
+            }
+        }
+           
+
+     P{
+        font-size: 26px;
+        letter-spacing: 2px;
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="front-card">
+            
+        </div>
+        <div class="message-card">
+            <div class="content">
+                <h1>Thanks for Everything, Mom</h1>
+                <p>Hoping you're doing well. Just want you to know, for me, you're the best mom, and I appreciate all your sacrifices. I believe all of that is going to be worth it someday. Promise to do my best for our family. I miss you and love you.</p>
+            </div>
+        </div>
+        
+        
+
+    <script>
+        const card = document.querySelector('.front-card');
+        card.addEventListener('click', () => {
+            card.classList.toggle('up-card');
+        });
+    </script>
+</body>
+</html>
